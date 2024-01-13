@@ -3,18 +3,7 @@
 set -e
 set -o pipefail
 
-DST="./dst"
 ROOT=/mnt/slack
-
-# https://stackoverflow.com/a/246128/9577873
-SOURCE=${BASH_SOURCE[0]}
-while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
-  SOURCE=$(readlink "$SOURCE")
-  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-done
-DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
-cd $DIR
 
 cleanup() {
     for d in sys/firmware/efi/efivars proc sys dev/pts dev/shm dev run tmp; do
@@ -39,5 +28,5 @@ chroot $ROOT /usr/bin/env -i \
     HOME=/root \
     TERM="$TERM" \
     PATH=/bin:/sbin:/usr/bin:/usr/sbin \
-    $1
+    $@
 

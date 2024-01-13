@@ -3,6 +3,8 @@
 set -e
 set -o pipefail
 
+ROOT=/mnt/slack
+
 # https://stackoverflow.com/a/246128/9577873
 SOURCE=${BASH_SOURCE[0]}
 while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
@@ -13,7 +15,12 @@ done
 DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 cd $DIR
 
-cat << EOF | ./chroot.sh /bin/bash
+cleanup() {
+    rm -- $ROOT/setup.sh || :
+}
+trap cleanup EXIT
+
+cat << EOF > $ROOT/setup.sh
 #!/bin/bash
 
 ldconfig
@@ -25,3 +32,4 @@ echo "==================== Create a user ===================="
 adduser
 EOF
 
+./chroot.sh /bin/bash /setup.sh
