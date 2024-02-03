@@ -4,7 +4,7 @@ set -e
 set -o pipefail
 
 DST="./dst"
-PKGTOOLS_PACK_PATH="a/pkgtools-15.0-noarch-42.txz"
+PKGTOOLS_PACK_PATH="a/pkgtools-15.1-noarch-8.txz"
 INSTALLPKG=./installpkg
 ROOT=/mnt/slack
 

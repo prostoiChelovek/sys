@@ -6,7 +6,7 @@ set -o pipefail
 cd $(dirname -- "$( readlink -f -- "$0"; )")
 
 MIRROR_URL="rsync://mirror.yandex.ru/slackware"
-URL="$MIRROR_URL/slackware64-15.0/slackware64"
+URL="$MIRROR_URL/slackware64-current/slackware64"
 DST=./dst
 
 SLACKWARE_WEBSITE_URL="www.slackware.com"
