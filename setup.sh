@@ -14,6 +14,9 @@ trap cleanup EXIT
 
 ./cfg.sh
 
+cp /etc/wpa_supplicant/wpa_supplicant.conf $ROOT/etc/wpa_supplicant.conf
+cp -L /etc/ssl/certs/* /mnt/slack/etc/ssl/certs/ || :
+
 echo "Enter hostname:"
 read new_hostname
 echo $new_hostname > $ROOT/etc/HOSTNAME
