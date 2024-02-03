@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# This selects your default screen font from among the ones in
+# /usr/share/kbd/consolefonts.
+#
+setfont -v /usr/share/kbd/consolefonts/ter-122b.psf.gz
+
