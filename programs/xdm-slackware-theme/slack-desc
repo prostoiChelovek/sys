@@ -6,14 +6,14 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
                    |-----handy-ruler------------------------------------------------------|
-slackware-xdm-theme: slackware-xdm-theme (Custom Slackware XDM Theme)
-slackware-xdm-theme:
-slackware-xdm-theme: This package contains a slightly modified version of alienBOB's
-slackware-xdm-theme: xdm config used in the liveslak project.
-slackware-xdm-theme:
-slackware-xdm-theme: Bug reports go to rworkman@slackbuilds.org
-slackware-xdm-theme:
-slackware-xdm-theme:
-slackware-xdm-theme:
-slackware-xdm-theme:
-slackware-xdm-theme:
+xdm-slackware-theme: xdm-slackware-theme (XDM theme for slackware)
+xdm-slackware-theme:
+xdm-slackware-theme: xdm-slackware-theme is a customizable slackware theme for the 
+xdm-slackware-theme: XDM login manager.
+xdm-slackware-theme:
+xdm-slackware-theme: Homepage: https://sourceforge.net/projects/xdm-slackware-theme/
+xdm-slackware-theme:
+xdm-slackware-theme:
+xdm-slackware-theme:
+xdm-slackware-theme:
+xdm-slackware-theme:
