@@ -12,6 +12,8 @@ cleanup() {
 }
 trap cleanup EXIT
 
+./cfg.sh
+
 echo "Enter hostname:"
 read new_hostname
 echo $new_hostname > $ROOT/etc/HOSTNAME
@@ -50,6 +52,7 @@ update-ca-certificates
 echo "https://mirror.yandex.ru/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
 EOF
 
-./cfg.sh
-
 ./chroot.sh /bin/bash /setup.sh
+
+[[ -d $ROOT/root/sys/ ]] || cp -R --preserve=mode,timestamp ./ $ROOT/root/sys/
+./chroot.sh /bin/bash /root/sys/programs.sh
