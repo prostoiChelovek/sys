@@ -1,4 +1,3 @@
 #!/bin/bash
-
-exec /usr/bin/xdm -nodaemon -config /etc/X11/xdm/xdm-config
+exec /usr/bin/startx
 
