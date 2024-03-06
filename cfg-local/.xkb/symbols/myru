@@ -1,0 +1,5 @@
+xkb_symbols "myru" {
+    include "ru"
+    key <AE04> { [           4,   dollar  ] };
+    key <TLDE> { [       Cyrillic_io,    asciitilde ] };
+};
