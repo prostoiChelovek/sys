@@ -9,5 +9,6 @@ cd $(dirname -- "$( readlink -f -- "$0"; )")
 
 ./programs/imlib2.sh
 ./programs/feh.sh
+./programs/st.sh
 ./programs/dwm.sh
 

@@ -1,3 +1,6 @@
 dst/
 *~
+*.o
+programs/st/st
+programs/dwm/dwm
 
