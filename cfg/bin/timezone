@@ -1,0 +1,53 @@
+#!/bin/sh
+# copied from the Slackware Linux timezone configuration utility.
+
+# setup our temp locations and variables
+TMP=/var/log/setup/tmp
+if [ -r $TMP/SeTT_PX ]; then
+   T_PX="`cat $TMP/SeTT_PX`"
+elif [ ! "$!" = "" ]; then
+   T_PX=$1
+else
+   T_PX=/
+fi
+
+# the hardware clock configuration file
+HWCLOCK_CONF=$T_PX/etc/hardwareclock
+
+# setzone( $TIMEZONE )
+#
+# This function accepts a time zone as the only parameter and sets it as
+# the default system time zone.
+setzone()
+{
+   TZ=$1
+
+   cd $T_PX/etc
+   if [ -r $T_PX/usr/share/zoneinfo/$TZ -o \
+        -r /var/log/mount/usr/share/zoneinfo/$TZ -o \
+        -L $T_PX/usr/share/zoneinfo/$TZ -o \
+        -L /var/log/mount/usr/share/zoneinfo/$TZ ]; then
+      rm -f localtime-copied-from
+      rm -f localtime
+      ln -sf /usr/share/zoneinfo/$TZ localtime
+      cd ..
+   fi
+}
+
+TIMEZONE=$1
+
+if [ -n "$TIMEZONE" -a \
+   -r $T_PX/usr/share/zoneinfo/$TIMEZONE -o \
+   -r /var/log/mount/usr/share/zoneinfo/$TIMEZONE -o \
+   -L $T_PX/usr/share/zoneinfo/$TIMEZONE -o \
+   -L /var/log/mount/usr/share/zoneinfo/$TIMEZONE ]; then
+ echo "Creating link from $TIMEZONE to localtime in /etc..."
+ echo
+ setzone $TIMEZONE
+ exit
+else
+ cat << EOF
+Timezone "$TIMEZONE" could not be found.
+EOF
+fi
+
