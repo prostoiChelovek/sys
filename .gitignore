@@ -1,6 +1,7 @@
 dst/
 *~
 *.o
+*.lo
 programs/st/st
 programs/dwm/dwm
-
+build/
