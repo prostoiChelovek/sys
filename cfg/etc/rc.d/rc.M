@@ -196,12 +196,12 @@ fi
 
 # Update any existing icon cache files:
 if find /usr/share/icons -maxdepth 2 2> /dev/null | grep -q icon-theme.cache ; then
-  for theme_dir in /usr/share/icons/* ; do
-    if [ -r ${theme_dir}/icon-theme.cache ]; then
-      echo "Updating icon-theme.cache in ${theme_dir}..."
-      /usr/bin/gtk-update-icon-cache -t -f ${theme_dir} 1> /dev/null 2> /dev/null &
-    fi
-  done
+  # for theme_dir in /usr/share/icons/* ; do
+  #   if [ -r ${theme_dir}/icon-theme.cache ]; then
+  #     echo "Updating icon-theme.cache in ${theme_dir}..."
+  #     /usr/bin/gtk-update-icon-cache -t -f ${theme_dir} 1> /dev/null 2> /dev/null &
+  #   fi
+  # done
   # This would be a large file and probably shouldn't be there.
   if [ -r /usr/share/icons/icon-theme.cache ]; then
     echo "Deleting icon-theme.cache in /usr/share/icons..."
@@ -211,10 +211,10 @@ if find /usr/share/icons -maxdepth 2 2> /dev/null | grep -q icon-theme.cache ; t
 fi
 
 # Update mime database:
-if [ -x /usr/bin/update-mime-database -a -d /usr/share/mime ]; then
-  echo "Updating MIME database:  /usr/bin/update-mime-database /usr/share/mime &"
-  /usr/bin/update-mime-database /usr/share/mime 1> /dev/null 2> /dev/null &
-fi
+# if [ -x /usr/bin/update-mime-database -a -d /usr/share/mime ]; then
+#   echo "Updating MIME database:  /usr/bin/update-mime-database /usr/share/mime &"
+#   /usr/bin/update-mime-database /usr/share/mime 1> /dev/null 2> /dev/null &
+# fi
 
 # Start HAL:
 if [ -x /etc/rc.d/rc.hald ]; then
