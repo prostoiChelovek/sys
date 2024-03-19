@@ -12,3 +12,6 @@ if [ -f /sys/class/backlight/intel_backlight/brightness ]; then
         > /sys/class/backlight/intel_backlight/brightness
 fi
 
+# disable touchpad while typing
+syndaemon -i 1 -d
+
