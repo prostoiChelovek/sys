@@ -130,9 +130,9 @@ function inet {
 inet &
 
 # Start D-Bus:
-# if [ -x /etc/rc.d/rc.messagebus ]; then
-#   /etc/rc.d/rc.messagebus start
-# fi
+if [ -x /etc/rc.d/rc.messagebus ]; then
+  /etc/rc.d/rc.messagebus start
+fi
 
 # Start the session/seat daemon:
 if [ -x /etc/rc.d/rc.elogind -a -x /bin/loginctl ]; then
