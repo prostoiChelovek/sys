@@ -4,4 +4,6 @@ dst/
 *.lo
 programs/st/st
 programs/dwm/dwm
+programs/slock/slock
 build/
+
