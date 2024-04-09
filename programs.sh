@@ -14,4 +14,5 @@ cd $(dirname -- "$( readlink -f -- "$0"; )")
 ./programs/dwm.sh
 ./programs/zathura.sh
 ./programs/zathura-pdf-poppler.sh
+./programs/graphviz.sh
 
