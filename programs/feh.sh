@@ -15,6 +15,6 @@ fi
 cd ./feh/
 
 [[ -f ./feh-3.6.1.tar.bz2 ]] || wget "https://feh.finalrewind.org/feh-3.6.1.tar.bz2"
-./feh.SlackBuild
+INOTIFY=1 ./feh.SlackBuild
 installpkg /tmp/feh-3.6.1-x86_64-1_SBo.tgz
 
