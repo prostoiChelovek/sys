@@ -20,7 +20,6 @@ set relativenumber                                                " show relativ
 set showmatch                                                     " show matching bracket (briefly jump)
 set showcmd                                                       " show typed command in status bar
 set title                                                         " show file in titlebar
-set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set directory=~/.vim/tmp                                          " move swp file to /tmp
 set backupdir=~/.vim/backup
@@ -38,10 +37,21 @@ set smartindent     " indent when
 set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
-" set textwidth=79
+set textwidth=79
+set colorcolumn=+1
 " set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+set nohlsearch
 
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 set background=dark
 colorscheme industry
+
+set noruler
+set noshowmode
+set noshowcmd
+let s:hidden_all=1
+set laststatus=0
+
+highlight LineNr ctermfg=grey
+
