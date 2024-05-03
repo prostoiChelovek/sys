@@ -11,6 +11,7 @@ cd $(dirname -- "$( readlink -f -- "$0"; )")
 ./programs/feh.sh
 ./programs/st.sh
 ./programs/slock.sh
+./programs/compton.sh
 ./programs/dwm.sh
 ./programs/zathura.sh
 ./programs/zathura-pdf-poppler.sh
