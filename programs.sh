@@ -17,4 +17,6 @@ cd $(dirname -- "$( readlink -f -- "$0"; )")
 ./programs/zathura-pdf-poppler.sh
 ./programs/graphviz.sh
 ./programs/btpd.sh
+./programs/mbedtls.sh
+./programs/shadowsocks.sh
 
